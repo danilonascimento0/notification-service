@@ -11,7 +11,7 @@ public class SMSNotification extends Notification {
 	@Override
 	public void send() {
 		// Code to send SMS
-		System.out.println("Sending SMS to " + user.getName() + " with message: " + message);
+		System.out.print("Sending SMS to " + user.getName() + " with message: " + message);
 	}
 
 }

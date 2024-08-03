@@ -10,6 +10,6 @@ public class PushNotification extends Notification {
 	@Override
 	public void send() {
 		// Code to send push notification
-		System.out.println("Sending PUSH NOTIFICATION to " + user.getName() + " with message: " + message);
+		System.out.print("Sending PUSH NOTIFICATION to " + user.getName() + " with message: " + message);
 	}
 }

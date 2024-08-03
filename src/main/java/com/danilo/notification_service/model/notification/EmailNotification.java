@@ -11,7 +11,7 @@ public class EmailNotification extends Notification {
 	@Override
 	public void send() {
 		// Code to send email
-		System.out.println("Sending EMAIL to " + user.getName() + " with message: " + message);
+		System.out.print("Sending EMAIL to " + user.getName() + " with message: " + message);
 	}
 
 }

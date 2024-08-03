@@ -21,6 +21,14 @@ public class NotificationTest {
 		assertEquals(Constants.DEFAULT_MESSAGE, notification.getMessage());
 		assertEquals(Constants.DEFAULT_SUBSCRIPTION, notification.getSubscription());
 		assertEquals(Constants.DEFAULT_EMAIL, notification.getUser().getEmail());
+
+		String expectedMessage =
+				"Sending SMS to " +
+				Constants.DEFAULT_NAME +
+				" with message: " +
+				Constants.DEFAULT_MESSAGE;
+
+		validateSendMessage(notification, expectedMessage);
 	}
 
 	@Test
@@ -30,18 +38,34 @@ public class NotificationTest {
 		assertEquals(Constants.DEFAULT_MESSAGE, emailNotification.getMessage());
 		assertEquals(Constants.DEFAULT_SUBSCRIPTION, emailNotification.getSubscription());
 		assertEquals(Constants.DEFAULT_EMAIL, emailNotification.getUser().getEmail());
+
+		String expectedMessage =
+				"Sending EMAIL to " +
+						Constants.DEFAULT_NAME +
+						" with message: " +
+						Constants.DEFAULT_MESSAGE;
+
+		validateSendMessage(emailNotification, expectedMessage);
 	}
 
 	@Test
 	public void testPushNotificationCreation() {
-		Notification emailNotification = NotificationBuilder.pushBuilder();
+		Notification pushNotification = NotificationBuilder.pushBuilder();
 
-		assertEquals(Constants.DEFAULT_MESSAGE, emailNotification.getMessage());
-		assertEquals(Constants.DEFAULT_SUBSCRIPTION, emailNotification.getSubscription());
-		assertEquals(Constants.DEFAULT_EMAIL, emailNotification.getUser().getEmail());
+		assertEquals(Constants.DEFAULT_MESSAGE, pushNotification.getMessage());
+		assertEquals(Constants.DEFAULT_SUBSCRIPTION, pushNotification.getSubscription());
+		assertEquals(Constants.DEFAULT_EMAIL, pushNotification.getUser().getEmail());
+
+		String expectedMessage =
+				"Sending PUSH NOTIFICATION to " +
+						Constants.DEFAULT_NAME +
+						" with message: " +
+						Constants.DEFAULT_MESSAGE;
+
+		validateSendMessage(pushNotification, expectedMessage);
 	}
 
-	private void validateSendMessage(Notification notification, String expectedMessage) {
+	private void validateSendMessage(Notification notification, String expectedOutput) {
 
 		// Capture the output
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -53,8 +77,7 @@ public class NotificationTest {
 		System.setOut(originalOut);
 
 		assertEquals(
-				expectedMessage,
+				expectedOutput,
 				outContent.toString());
-
 	}
 }
