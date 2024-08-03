@@ -1,0 +1,17 @@
+package com.danilo.notification_service.builder;
+
+public class Constants<T> {
+
+	public final static long TEST_LONG = 1;
+	public final static String TEST_NAME = "Test Name";
+	public final static String TEST_EMAIL = "testname@gmail.com";
+	public final static String TEST_PHONE_NUMBER = "+1234567890";
+	public final static String TEST_SUBSCRIPTION_SPORTS = "Sports";
+	public final static String TEST_SUBSCRIPTION_FINANCE = "Finance";
+	public final static String TEST_SUBSCRIPTION_MOVIES = "Movies";
+	public final static String TEST_CHANNEL_SMS = "SMS";
+	public final static String TEST_CHANNEL_EMAIL = "Email";
+	public final static String TEST_CHANNEL_PUSH = "Push";
+	public final static String TEST_MESSAGE = "Test Message";
+
+}
