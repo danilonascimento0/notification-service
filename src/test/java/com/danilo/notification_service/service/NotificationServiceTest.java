@@ -40,6 +40,30 @@ public class NotificationServiceTest {
 
 		MessageDTO messageDTO = MessageDTOBuilder.buildMessageDTO();
 
+		// Assert
+		String expectedOutput = "Sending EMAIL to " + mockUser.getName() + " with message: " + messageDTO.getMessage();
+
+		validateSendMessage(messageDTO, expectedOutput);
+	}
+
+	@Test
+	public void testSendSMSNotification() {
+		// Arrange
+		User mockUser = new User(1, "Danilo", "danilo@gmail.com", "1234567890",
+				List.of(Subscription.SPORTS),
+				List.of(Channel.SMS));
+		when(userRepository.findBySubscription(Subscription.SPORTS)).thenReturn(List.of(mockUser));
+
+		MessageDTO messageDTO = MessageDTOBuilder.buildMessageDTO();
+
+		// Assert
+		String expectedOutput = "Sending SMS to " + mockUser.getName() + " with message: " + messageDTO.getMessage();
+
+		validateSendMessage(messageDTO, expectedOutput);
+	}
+
+	private void validateSendMessage(MessageDTO messageDTO, String expectedOutput) {
+
 		// Capture the output
 		ByteArrayOutputStream outContent = new ByteArrayOutputStream();
 		PrintStream originalOut = System.out;
@@ -48,14 +72,9 @@ public class NotificationServiceTest {
 		// Act
 		notificationService.sendNotification(messageDTO);
 
-		// Restore the original System.out
 		System.setOut(originalOut);
 
-		// Assert
-		String expectedOutput = "Sending EMAIL to " + mockUser.getName() + " with message: " + messageDTO.getMessage();
-		String actualOutput = outContent.toString();
-
-		assertEquals(expectedOutput, actualOutput);
+		assertEquals(expectedOutput, outContent.toString());
 
 		// Verify interactions
 		verify(userRepository, times(1)).findBySubscription(Subscription.SPORTS);
