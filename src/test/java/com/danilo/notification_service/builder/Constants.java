@@ -11,12 +11,12 @@ public class Constants<T> {
 	public final static String DEFAULT_CHANNEL = "CHANNEL";
 	public final static String DEFAULT_MESSAGE = "Test Message";
 
-	// Test values
-	public final static String TEST_SUBSCRIPTION_SPORTS = "Sports";
-	public final static String TEST_SUBSCRIPTION_FINANCE = "Finance";
-	public final static String TEST_SUBSCRIPTION_MOVIES = "Movies";
-	public final static String TEST_CHANNEL_SMS = "SMS";
-	public final static String TEST_CHANNEL_EMAIL = "Email";
-	public final static String TEST_CHANNEL_PUSH = "Push";
+	// MOCK values
+	public final static String MOCK_SUBSCRIPTION_SPORTS = "Sports";
+	public final static String MOCK_SUBSCRIPTION_FINANCE = "Finance";
+	public final static String MOCK_SUBSCRIPTION_MOVIES = "Movies";
+	public final static String MOCK_CHANNEL_SMS = "SMS";
+	public final static String MOCK_CHANNEL_EMAIL = "Email";
+	public final static String MOCK_CHANNEL_PUSH = "Push";
 
 }
