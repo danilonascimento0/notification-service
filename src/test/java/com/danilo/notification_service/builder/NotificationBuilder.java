@@ -8,19 +8,19 @@ public class NotificationBuilder {
 
 	public static SMSNotification smsBuilder() {
 		return new SMSNotification(Constants.DEFAULT_MESSAGE,
-				Constants.DEFAULT_SUBSCRIPTION,
+				Constants.DEFAULT_SUBSCRIPTION_ENUM,
 				UserBuilder.builder());
 	}
 
 	public static EmailNotification emailBuilder() {
 		return new EmailNotification(Constants.DEFAULT_MESSAGE,
-				Constants.DEFAULT_SUBSCRIPTION,
+				Constants.DEFAULT_SUBSCRIPTION_ENUM,
 				UserBuilder.builder());
 	}
 
 	public static PushNotification pushBuilder() {
 		return new PushNotification(Constants.DEFAULT_MESSAGE,
-				Constants.DEFAULT_SUBSCRIPTION,
+				Constants.DEFAULT_SUBSCRIPTION_ENUM,
 				UserBuilder.builder());
 	}
 

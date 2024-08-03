@@ -1,16 +1,16 @@
 package com.danilo.notification_service.model.notification;
 
 import com.danilo.notification_service.model.User;
-import com.danilo.notification_service.model.enums.Subscription;
+import com.danilo.notification_service.model.enums.SubscriptionEnum;
 
 public abstract class Notification {
 	protected String message;
-	protected Subscription subscription;
+	protected SubscriptionEnum subscriptionEnum;
 	protected User user;
 
-	public Notification(String message, Subscription subscription, User user) {
+	public Notification(String message, SubscriptionEnum subscriptionEnum, User user) {
 		this.message = message;
-		this.subscription = subscription;
+		this.subscriptionEnum = subscriptionEnum;
 		this.user = user;
 	}
 
@@ -24,12 +24,12 @@ public abstract class Notification {
 		this.message = message;
 	}
 
-	public Subscription getSubscription() {
-		return subscription;
+	public SubscriptionEnum getSubscription() {
+		return subscriptionEnum;
 	}
 
-	public void setSubscription(Subscription subscription) {
-		this.subscription = subscription;
+	public void setSubscription(SubscriptionEnum subscriptionEnum) {
+		this.subscriptionEnum = subscriptionEnum;
 	}
 
 	public User getUser() {

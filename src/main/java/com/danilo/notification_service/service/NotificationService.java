@@ -1,8 +1,8 @@
 package com.danilo.notification_service.service;
 
 import com.danilo.notification_service.model.MessageDTO;
-import com.danilo.notification_service.model.enums.Channel;
-import com.danilo.notification_service.model.enums.Subscription;
+import com.danilo.notification_service.model.enums.ChannelEnum;
+import com.danilo.notification_service.model.enums.SubscriptionEnum;
 import com.danilo.notification_service.model.notification.EmailNotification;
 import com.danilo.notification_service.model.notification.Notification;
 import com.danilo.notification_service.model.notification.PushNotification;
@@ -22,27 +22,27 @@ public class NotificationService {
 
 	public void sendNotification(MessageDTO messageDTO) {
 
-		Subscription subscription = Subscription.fromValue(messageDTO.getSubscription());
+		SubscriptionEnum subscriptionEnum = SubscriptionEnum.fromValue(messageDTO.getSubscription());
 
-		if (subscription == null) {
+		if (subscriptionEnum == null) {
 			throw new IllegalArgumentException("Invalid subscription: " + messageDTO.getSubscription());
 		}
 
 		List<Notification> notificationList = new ArrayList<>();
 
-		this.userRepository.findBySubscription(subscription).forEach(user -> {
+		this.userRepository.findBySubscription(subscriptionEnum).forEach(user -> {
 			user.getChannelList().forEach(channel -> {
-				if (channel.equals(Channel.EMAIL)) {
+				if (channel.equals(ChannelEnum.EMAIL)) {
 					notificationList.add(
-							new EmailNotification(messageDTO.getMessage(), subscription, user));
+							new EmailNotification(messageDTO.getMessage(), subscriptionEnum, user));
 				}
-				if (channel.equals(Channel.SMS)) {
+				if (channel.equals(ChannelEnum.SMS)) {
 					notificationList.add(
-							new SMSNotification(messageDTO.getMessage(), subscription, user));
+							new SMSNotification(messageDTO.getMessage(), subscriptionEnum, user));
 				}
-				if (channel.equals(Channel.PUSH_NOTIFICATION)) {
+				if (channel.equals(ChannelEnum.PUSH_NOTIFICATION)) {
 					notificationList.add(
-							new PushNotification(messageDTO.getMessage(), subscription, user));
+							new PushNotification(messageDTO.getMessage(), subscriptionEnum, user));
 				}
 			});
 		});

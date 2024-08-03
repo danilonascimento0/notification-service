@@ -2,7 +2,7 @@ package com.danilo.notification_service.repository;
 
 import com.danilo.notification_service.mock.UserMock;
 import com.danilo.notification_service.model.User;
-import com.danilo.notification_service.model.enums.Subscription;
+import com.danilo.notification_service.model.enums.SubscriptionEnum;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -11,9 +11,9 @@ import java.util.stream.Collectors;
 //Simulating a repository
 public class UserRepository {
 
-	public List<User> findBySubscription(Subscription subscription) {
+	public List<User> findBySubscription(SubscriptionEnum subscriptionEnum) {
 		return UserMock.userList().stream()
-				.filter(user -> user.getSubscripstionList().contains(subscription))
+				.filter(user -> user.getSubscripstionList().contains(subscriptionEnum))
 				.collect(Collectors.toList());
 	}
 }

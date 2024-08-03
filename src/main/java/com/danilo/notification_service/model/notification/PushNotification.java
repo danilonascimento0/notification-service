@@ -1,11 +1,11 @@
 package com.danilo.notification_service.model.notification;
 
 import com.danilo.notification_service.model.User;
-import com.danilo.notification_service.model.enums.Subscription;
+import com.danilo.notification_service.model.enums.SubscriptionEnum;
 
 public class PushNotification extends Notification {
-	public PushNotification(String message, Subscription subscription, User user) {
-		super(message, subscription, user);
+	public PushNotification(String message, SubscriptionEnum subscriptionEnum, User user) {
+		super(message, subscriptionEnum, user);
 	}
 
 	@Override

@@ -11,8 +11,8 @@ public class UserBuilder {
 				Constants.DEFAULT_NAME,
 				Constants.DEFAULT_EMAIL,
 				Constants.DEFAULT_PHONE_NUMBER,
-				List.of(Constants.DEFAULT_SUBSCRIPTION),
-				List.of(Constants.DEFAULT_CHANNEL));
+				List.of(Constants.DEFAULT_SUBSCRIPTION_ENUM),
+				List.of(Constants.DEFAULT_CHANNEL_ENUM));
 	}
 
 }

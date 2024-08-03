@@ -1,7 +1,7 @@
 package com.danilo.notification_service.model;
 
-import com.danilo.notification_service.model.enums.Channel;
-import com.danilo.notification_service.model.enums.Subscription;
+import com.danilo.notification_service.model.enums.ChannelEnum;
+import com.danilo.notification_service.model.enums.SubscriptionEnum;
 
 import java.util.List;
 
@@ -11,18 +11,18 @@ public class User {
 	private String name;
 	private String email;
 	private String phoneNumber;
-	private List<Subscription> subscripstionList;
-	private List<Channel> channelList;
+	private List<SubscriptionEnum> subscripstionList;
+	private List<ChannelEnum> channelEnumList;
 
 	public User() { }
 
-	public User(long id, String name, String email, String phoneNumber, List<Subscription> subscripstionList, List<Channel> channelList) {
+	public User(long id, String name, String email, String phoneNumber, List<SubscriptionEnum> subscripstionList, List<ChannelEnum> channelEnumList) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
 		this.subscripstionList = subscripstionList;
-		this.channelList = channelList;
+		this.channelEnumList = channelEnumList;
 	}
 
 	public long getId() {
@@ -57,19 +57,19 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public List<Subscription> getSubscripstionList() {
+	public List<SubscriptionEnum> getSubscripstionList() {
 		return subscripstionList;
 	}
 
-	public void setSubscriptionList(List<Subscription> subscripstionList) {
+	public void setSubscriptionList(List<SubscriptionEnum> subscripstionList) {
 		this.subscripstionList = subscripstionList;
 	}
 
-	public List<Channel> getChannelList() {
-		return channelList;
+	public List<ChannelEnum> getChannelList() {
+		return channelEnumList;
 	}
 
-	public void setChannelList(List<Channel> channelList) {
-		this.channelList = channelList;
+	public void setChannelList(List<ChannelEnum> channelEnumList) {
+		this.channelEnumList = channelEnumList;
 	}
 }

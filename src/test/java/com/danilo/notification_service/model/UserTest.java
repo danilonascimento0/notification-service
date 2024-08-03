@@ -19,7 +19,7 @@ public class UserTest {
 		assertEquals(Constants.DEFAULT_NAME, user.getName());
 		assertEquals(Constants.DEFAULT_EMAIL, user.getEmail());
 		assertEquals(Constants.DEFAULT_PHONE_NUMBER, user.getPhoneNumber());
-		assertTrue(user.getSubscripstionList().contains(Constants.DEFAULT_SUBSCRIPTION));
-		assertTrue(user.getChannelList().contains(Constants.DEFAULT_CHANNEL));
+		assertTrue(user.getSubscripstionList().contains(Constants.DEFAULT_SUBSCRIPTION_ENUM));
+		assertTrue(user.getChannelList().contains(Constants.DEFAULT_CHANNEL_ENUM));
 	}
 }

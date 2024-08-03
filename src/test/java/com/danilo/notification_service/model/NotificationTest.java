@@ -19,7 +19,7 @@ public class NotificationTest {
 		Notification notification = NotificationBuilder.smsBuilder();
 
 		assertEquals(Constants.DEFAULT_MESSAGE, notification.getMessage());
-		assertEquals(Constants.DEFAULT_SUBSCRIPTION, notification.getSubscription());
+		assertEquals(Constants.DEFAULT_SUBSCRIPTION_ENUM, notification.getSubscription());
 		assertEquals(Constants.DEFAULT_EMAIL, notification.getUser().getEmail());
 
 		String expectedMessage =
@@ -36,7 +36,7 @@ public class NotificationTest {
 		Notification emailNotification = NotificationBuilder.emailBuilder();
 
 		assertEquals(Constants.DEFAULT_MESSAGE, emailNotification.getMessage());
-		assertEquals(Constants.DEFAULT_SUBSCRIPTION, emailNotification.getSubscription());
+		assertEquals(Constants.DEFAULT_SUBSCRIPTION_ENUM, emailNotification.getSubscription());
 		assertEquals(Constants.DEFAULT_EMAIL, emailNotification.getUser().getEmail());
 
 		String expectedMessage =
@@ -53,7 +53,7 @@ public class NotificationTest {
 		Notification pushNotification = NotificationBuilder.pushBuilder();
 
 		assertEquals(Constants.DEFAULT_MESSAGE, pushNotification.getMessage());
-		assertEquals(Constants.DEFAULT_SUBSCRIPTION, pushNotification.getSubscription());
+		assertEquals(Constants.DEFAULT_SUBSCRIPTION_ENUM, pushNotification.getSubscription());
 		assertEquals(Constants.DEFAULT_EMAIL, pushNotification.getUser().getEmail());
 
 		String expectedMessage =
