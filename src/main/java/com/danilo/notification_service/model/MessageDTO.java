@@ -1,13 +1,11 @@
 package com.danilo.notification_service.model;
 
-import com.danilo.notification_service.model.enums.Subscription;
-
 public class MessageDTO {
 
 	String message;
-	Subscription subscription;
+	String subscription;
 
-	public MessageDTO(String message, Subscription subscription) {
+	public MessageDTO(String message, String subscription) {
 		this.message = message;
 		this.subscription = subscription;
 	}
@@ -20,11 +18,11 @@ public class MessageDTO {
 		this.message = message;
 	}
 
-	public Subscription getSubscription() {
+	public String getSubscription() {
 		return subscription;
 	}
 
-	public void setSubscription(Subscription subscription) {
+	public void setSubscription(String subscription) {
 		this.subscription = subscription;
 	}
 
