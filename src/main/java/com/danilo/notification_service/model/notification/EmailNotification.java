@@ -4,8 +4,8 @@ import com.danilo.notification_service.model.User;
 
 public class EmailNotification extends Notification {
 
-	public EmailNotification(String message, String category, User user) {
-		super(message, category, user);
+	public EmailNotification(String message, String subscription, User user) {
+		super(message, subscription, user);
 	}
 
 	@Override
