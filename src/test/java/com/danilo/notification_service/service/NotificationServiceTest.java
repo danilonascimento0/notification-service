@@ -1,5 +1,6 @@
 package com.danilo.notification_service.service;
 
+import com.danilo.notification_service.builder.Constants;
 import com.danilo.notification_service.builder.MessageDTOBuilder;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.model.User;
@@ -16,6 +17,7 @@ import java.io.PrintStream;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
@@ -78,6 +80,19 @@ public class NotificationServiceTest {
 
 		// Verify interactions
 		verify(userRepository, times(1)).findBySubscription(Subscription.SPORTS);
+	}
+
+	@Test
+	public void testSendNotificationThrowsIllegalArgumentException() {
+		// Arrange
+		MessageDTO invalidMessageDTO = new MessageDTO(Constants.DEFAULT_MESSAGE, "InvalidSubscription");
+
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
+			notificationService.sendNotification(invalidMessageDTO);
+		});
+
+		// Assert
+		assertEquals("Invalid subscription: InvalidSubscription", exception.getMessage());
 	}
 
 }
