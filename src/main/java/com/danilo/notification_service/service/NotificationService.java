@@ -1,6 +1,7 @@
 package com.danilo.notification_service.service;
 
 import com.danilo.notification_service.model.MessageDTO;
+import com.danilo.notification_service.model.enums.Channel;
 import com.danilo.notification_service.model.notification.EmailNotification;
 import com.danilo.notification_service.model.notification.Notification;
 import com.danilo.notification_service.repository.UserRepository;
@@ -17,7 +18,7 @@ public class NotificationService {
 
 		this.userRepository.findBySubscription(messageDTO.getSubscription()).forEach(user -> {
 			user.getChannelList().forEach(channel -> {
-				if (channel.equals("Email")) {
+				if (channel.equals(Channel.EMAIL)) {
 					Notification notification = new EmailNotification(messageDTO.getMessage(), messageDTO.getSubscription(), user);
 					notification.send();
 				}
