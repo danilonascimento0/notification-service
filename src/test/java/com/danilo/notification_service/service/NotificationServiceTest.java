@@ -1,10 +1,10 @@
 package com.danilo.notification_service.service;
 
-import com.danilo.notification_service.builder.Constants;
 import com.danilo.notification_service.builder.MessageDTOBuilder;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.model.User;
 import com.danilo.notification_service.model.enums.Channel;
+import com.danilo.notification_service.model.enums.Subscription;
 import com.danilo.notification_service.repository.UserRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,9 +34,9 @@ public class NotificationServiceTest {
 	public void testSendEmailNotification() {
 		// Arrange
 		User mockUser = new User(1, "Danilo", "danilo@gmail.com", "1234567890",
-				List.of(Constants.MOCK_SUBSCRIPTION_SPORTS),
+				List.of(Subscription.SPORTS),
 				List.of(Channel.EMAIL));
-		when(userRepository.findBySubscription(Constants.MOCK_SUBSCRIPTION_SPORTS)).thenReturn(List.of(mockUser));
+		when(userRepository.findBySubscription(Subscription.SPORTS)).thenReturn(List.of(mockUser));
 
 		MessageDTO messageDTO = MessageDTOBuilder.buildMessageDTO();
 
@@ -58,7 +58,7 @@ public class NotificationServiceTest {
 		assertEquals(expectedOutput, actualOutput);
 
 		// Verify interactions
-		verify(userRepository, times(1)).findBySubscription(Constants.MOCK_SUBSCRIPTION_SPORTS);
+		verify(userRepository, times(1)).findBySubscription(Subscription.SPORTS);
 	}
 
 }

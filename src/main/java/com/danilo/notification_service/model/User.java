@@ -1,6 +1,7 @@
 package com.danilo.notification_service.model;
 
 import com.danilo.notification_service.model.enums.Channel;
+import com.danilo.notification_service.model.enums.Subscription;
 
 import java.util.List;
 
@@ -10,12 +11,12 @@ public class User {
 	private String name;
 	private String email;
 	private String phoneNumber;
-	private List<String> subscripstionList;
+	private List<Subscription> subscripstionList;
 	private List<Channel> channelList;
 
 	public User() { }
 
-	public User(long id, String name, String email, String phoneNumber, List<String> subscripstionList, List<Channel> channelList) {
+	public User(long id, String name, String email, String phoneNumber, List<Subscription> subscripstionList, List<Channel> channelList) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
@@ -56,11 +57,11 @@ public class User {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public List<String> getSubscripstionList() {
+	public List<Subscription> getSubscripstionList() {
 		return subscripstionList;
 	}
 
-	public void setSubscripstionList(List<String> subscripstionList) {
+	public void setSubscriptionList(List<Subscription> subscripstionList) {
 		this.subscripstionList = subscripstionList;
 	}
 
