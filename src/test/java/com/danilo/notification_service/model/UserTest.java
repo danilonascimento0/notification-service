@@ -15,13 +15,11 @@ public class UserTest {
 	public void testUserCreation() {
 		User user = UserBuilder.builder();
 
-		assertEquals(Constants.TEST_LONG, user.getId());
-		assertEquals(Constants.TEST_NAME, user.getName());
-		assertEquals(Constants.TEST_EMAIL, user.getEmail());
-		assertEquals(Constants.TEST_PHONE_NUMBER, user.getPhoneNumber());
-		assertTrue(user.getSubscripstionList().contains(Constants.TEST_SUBSCRIPTION_SPORTS));
-		assertTrue(user.getSubscripstionList().contains(Constants.TEST_SUBSCRIPTION_MOVIES));
-		assertTrue(user.getChannelList().contains(Constants.TEST_CHANNEL_SMS));
-		assertTrue(user.getChannelList().contains(Constants.TEST_CHANNEL_EMAIL));
+		assertEquals(Constants.DEFAULT_LONG, user.getId());
+		assertEquals(Constants.DEFAULT_NAME, user.getName());
+		assertEquals(Constants.DEFAULT_EMAIL, user.getEmail());
+		assertEquals(Constants.DEFAULT_PHONE_NUMBER, user.getPhoneNumber());
+		assertTrue(user.getSubscripstionList().contains(Constants.DEFAULT_SUBSCRIPTION));
+		assertTrue(user.getChannelList().contains(Constants.DEFAULT_CHANNEL));
 	}
 }
