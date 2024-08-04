@@ -13,7 +13,7 @@ public class UserTest {
 
 	@Test
 	public void testUserCreation() {
-		User user = UserBuilder.builder();
+		User user = UserBuilder.build();
 
 		assertEquals(Constants.DEFAULT_LONG, user.getId());
 		assertEquals(Constants.DEFAULT_NAME, user.getName());

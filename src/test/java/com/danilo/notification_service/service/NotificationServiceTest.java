@@ -40,7 +40,7 @@ public class NotificationServiceTest {
 				List.of(ChannelEnum.EMAIL));
 		when(userRepository.findBySubscription(SubscriptionEnum.SPORTS)).thenReturn(List.of(mockUser));
 
-		MessageDTO messageDTO = MessageDTOBuilder.buildMessageDTO();
+		MessageDTO messageDTO = MessageDTOBuilder.build();
 
 		// Assert
 		String expectedOutput = "Sending EMAIL to " + mockUser.getName() + " with message: " + messageDTO.getMessage();
@@ -56,7 +56,7 @@ public class NotificationServiceTest {
 				List.of(ChannelEnum.SMS));
 		when(userRepository.findBySubscription(SubscriptionEnum.SPORTS)).thenReturn(List.of(mockUser));
 
-		MessageDTO messageDTO = MessageDTOBuilder.buildMessageDTO();
+		MessageDTO messageDTO = MessageDTOBuilder.build();
 
 		// Assert
 		String expectedOutput = "Sending SMS to " + mockUser.getName() + " with message: " + messageDTO.getMessage();

@@ -10,10 +10,14 @@ public enum ChannelEnum {
 	SMS(new SMSChannel()),
 	PUSH_NOTIFICATION(new PushChannel());
 
-	public Channel channel;
+	private final Channel channel;
 
 	ChannelEnum(Channel channel) {
 		this.channel = channel;
+	}
+
+	public Channel getChannel() {
+		return channel;
 	}
 
 }

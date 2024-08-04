@@ -6,7 +6,7 @@ import java.util.List;
 
 public class UserBuilder {
 
-	public static User builder() {
+	public static User build() {
 		return new User(Constants.DEFAULT_LONG,
 				Constants.DEFAULT_NAME,
 				Constants.DEFAULT_EMAIL,
