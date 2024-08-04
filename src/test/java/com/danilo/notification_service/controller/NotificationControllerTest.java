@@ -1,6 +1,7 @@
 package com.danilo.notification_service.controller;
 
 import com.danilo.notification_service.builder.ConstantsTest;
+import com.danilo.notification_service.model.Constants;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.service.NotificationService;
 import org.junit.jupiter.api.BeforeEach;
@@ -40,20 +41,22 @@ public class NotificationControllerTest {
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(messageContent))
 				.andExpect(status().isOk())
-				.andExpect(content().string("Notification sent successfully"));
+				.andExpect(content().string(Constants.NOTIFICATION_SENT_SUCCESS));
 
 		verify(notificationService, times(1)).sendNotification(any(MessageDTO.class));
 	}
 
 	@Test
 	public void testSendNotification_InvalidSubscription() throws Exception {
-		doThrow(new IllegalArgumentException("Invalid subscription: Invalid")).when(notificationService).sendNotification(any(MessageDTO.class));
+		final String invalidSubscriptionTest = "Invalid";
+
+		doThrow(new IllegalArgumentException(Constants.INVALID_SUBSCRIPTION + invalidSubscriptionTest)).when(notificationService).sendNotification(any(MessageDTO.class));
 
 		mockMvc.perform(post("/notifications/send")
 						.contentType(MediaType.APPLICATION_JSON)
 						.content(messageContent))
 				.andExpect(status().isBadRequest())
-				.andExpect(content().string("Invalid subscription: Invalid"));
+				.andExpect(content().string(Constants.INVALID_SUBSCRIPTION + invalidSubscriptionTest));
 
 		verify(notificationService, times(1)).sendNotification(any(MessageDTO.class));
 	}

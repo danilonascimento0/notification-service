@@ -1,5 +1,6 @@
 package com.danilo.notification_service.service;
 
+import com.danilo.notification_service.model.Constants;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.model.enums.SubscriptionEnum;
 import com.danilo.notification_service.repository.UserRepository;
@@ -21,7 +22,7 @@ public class NotificationService {
 		SubscriptionEnum subscriptionEnum = SubscriptionEnum.fromValue(messageDTO.getSubscription());
 
 		if (subscriptionEnum == null) {
-			throw new IllegalArgumentException("Invalid subscription: " + messageDTO.getSubscription());
+			throw new IllegalArgumentException(Constants.INVALID_SUBSCRIPTION + messageDTO.getSubscription());
 		}
 
 		this.userRepository.findBySubscription(subscriptionEnum).forEach(user -> {

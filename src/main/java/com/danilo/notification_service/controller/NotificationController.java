@@ -1,5 +1,6 @@
 package com.danilo.notification_service.controller;
 
+import com.danilo.notification_service.model.Constants;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.service.NotificationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class NotificationController {
 	public ResponseEntity<String> sendNotification(@RequestBody MessageDTO messageDTO) {
 		try {
 			notificationService.sendNotification(messageDTO);
-			return new ResponseEntity<>("Notification sent successfully", HttpStatus.OK);
+			return new ResponseEntity<>(Constants.NOTIFICATION_SENT_SUCCESS, HttpStatus.OK);
 		} catch (IllegalArgumentException e) {
 			return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
 		}
