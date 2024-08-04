@@ -1,6 +1,6 @@
 package com.danilo.notification_service.service;
 
-import com.danilo.notification_service.builder.Constants;
+import com.danilo.notification_service.builder.ConstantsTest;
 import com.danilo.notification_service.builder.MessageDTOBuilder;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.model.User;
@@ -85,7 +85,7 @@ public class NotificationServiceTest {
 	@Test
 	public void testSendNotificationThrowsIllegalArgumentException() {
 		// Arrange
-		MessageDTO invalidMessageDTO = new MessageDTO(Constants.DEFAULT_MESSAGE, "InvalidSubscription");
+		MessageDTO invalidMessageDTO = new MessageDTO(ConstantsTest.DEFAULT_MESSAGE, "InvalidSubscription");
 
 		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> {
 			notificationService.sendNotification(invalidMessageDTO);

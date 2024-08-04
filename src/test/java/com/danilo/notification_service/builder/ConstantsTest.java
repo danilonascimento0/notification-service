@@ -3,7 +3,7 @@ package com.danilo.notification_service.builder;
 import com.danilo.notification_service.model.enums.ChannelEnum;
 import com.danilo.notification_service.model.enums.SubscriptionEnum;
 
-public class Constants<T> {
+public class ConstantsTest<T> {
 
 	// Default values
 	public final static long DEFAULT_LONG = 1;

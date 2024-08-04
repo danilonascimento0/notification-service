@@ -6,7 +6,7 @@ import com.danilo.notification_service.model.enums.SubscriptionEnum;
 public class MessageDTOBuilder {
 
 	public static MessageDTO build() {
-		return new MessageDTO(Constants.DEFAULT_MESSAGE, SubscriptionEnum.SPORTS.getValue());
+		return new MessageDTO(ConstantsTest.DEFAULT_MESSAGE, SubscriptionEnum.SPORTS.getValue());
 	}
 
 }

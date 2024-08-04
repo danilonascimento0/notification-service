@@ -1,6 +1,6 @@
 package com.danilo.notification_service.controller;
 
-import com.danilo.notification_service.builder.Constants;
+import com.danilo.notification_service.builder.ConstantsTest;
 import com.danilo.notification_service.model.MessageDTO;
 import com.danilo.notification_service.service.NotificationService;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,7 +29,7 @@ public class NotificationControllerTest {
 
 	@BeforeEach
 	public void setUp() {
-		messageContent = "{\"message\":\""+ Constants.DEFAULT_MESSAGE +"\",\"subscription\":\""+Constants.DEFAULT_SUBSCRIPTION_ENUM+"\"}";
+		messageContent = "{\"message\":\""+ ConstantsTest.DEFAULT_MESSAGE +"\",\"subscription\":\""+ ConstantsTest.DEFAULT_SUBSCRIPTION_ENUM+"\"}";
 	}
 
 	@Test

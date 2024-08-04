@@ -1,6 +1,6 @@
 package com.danilo.notification_service.model;
 
-import com.danilo.notification_service.builder.Constants;
+import com.danilo.notification_service.builder.ConstantsTest;
 import com.danilo.notification_service.builder.UserBuilder;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -15,11 +15,11 @@ public class UserTest {
 	public void testUserCreation() {
 		User user = UserBuilder.build();
 
-		assertEquals(Constants.DEFAULT_LONG, user.getId());
-		assertEquals(Constants.DEFAULT_NAME, user.getName());
-		assertEquals(Constants.DEFAULT_EMAIL, user.getEmail());
-		assertEquals(Constants.DEFAULT_PHONE_NUMBER, user.getPhoneNumber());
-		assertTrue(user.getSubscripstionList().contains(Constants.DEFAULT_SUBSCRIPTION_ENUM));
-		assertTrue(user.getChannelList().contains(Constants.DEFAULT_CHANNEL_ENUM));
+		assertEquals(ConstantsTest.DEFAULT_LONG, user.getId());
+		assertEquals(ConstantsTest.DEFAULT_NAME, user.getName());
+		assertEquals(ConstantsTest.DEFAULT_EMAIL, user.getEmail());
+		assertEquals(ConstantsTest.DEFAULT_PHONE_NUMBER, user.getPhoneNumber());
+		assertTrue(user.getSubscripstionList().contains(ConstantsTest.DEFAULT_SUBSCRIPTION_ENUM));
+		assertTrue(user.getChannelList().contains(ConstantsTest.DEFAULT_CHANNEL_ENUM));
 	}
 }

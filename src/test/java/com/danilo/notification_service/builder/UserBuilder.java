@@ -7,12 +7,12 @@ import java.util.List;
 public class UserBuilder {
 
 	public static User build() {
-		return new User(Constants.DEFAULT_LONG,
-				Constants.DEFAULT_NAME,
-				Constants.DEFAULT_EMAIL,
-				Constants.DEFAULT_PHONE_NUMBER,
-				List.of(Constants.DEFAULT_SUBSCRIPTION_ENUM),
-				List.of(Constants.DEFAULT_CHANNEL_ENUM));
+		return new User(ConstantsTest.DEFAULT_LONG,
+				ConstantsTest.DEFAULT_NAME,
+				ConstantsTest.DEFAULT_EMAIL,
+				ConstantsTest.DEFAULT_PHONE_NUMBER,
+				List.of(ConstantsTest.DEFAULT_SUBSCRIPTION_ENUM),
+				List.of(ConstantsTest.DEFAULT_CHANNEL_ENUM));
 	}
 
 }

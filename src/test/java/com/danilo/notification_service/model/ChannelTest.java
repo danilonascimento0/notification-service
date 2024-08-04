@@ -1,6 +1,6 @@
 package com.danilo.notification_service.model;
 
-import com.danilo.notification_service.builder.Constants;
+import com.danilo.notification_service.builder.ConstantsTest;
 import com.danilo.notification_service.builder.MessageDTOBuilder;
 import com.danilo.notification_service.builder.UserBuilder;
 import com.danilo.notification_service.model.channel.Channel;
@@ -22,9 +22,9 @@ public class ChannelTest {
 
 		String expectedMessage =
 				"Sending SMS to " +
-				Constants.DEFAULT_NAME +
+				ConstantsTest.DEFAULT_NAME +
 				" with message: " +
-				Constants.DEFAULT_MESSAGE;
+				ConstantsTest.DEFAULT_MESSAGE;
 
 		validateSendMessage(channel, expectedMessage);
 	}
@@ -35,9 +35,9 @@ public class ChannelTest {
 
 		String expectedMessage =
 				"Sending EMAIL to " +
-						Constants.DEFAULT_NAME +
+						ConstantsTest.DEFAULT_NAME +
 						" with message: " +
-						Constants.DEFAULT_MESSAGE;
+						ConstantsTest.DEFAULT_MESSAGE;
 
 		validateSendMessage(channel, expectedMessage);
 	}
@@ -48,9 +48,9 @@ public class ChannelTest {
 
 		String expectedMessage =
 				"Sending PUSH NOTIFICATION to " +
-						Constants.DEFAULT_NAME +
+						ConstantsTest.DEFAULT_NAME +
 						" with message: " +
-						Constants.DEFAULT_MESSAGE;
+						ConstantsTest.DEFAULT_MESSAGE;
 
 		validateSendMessage(channel, expectedMessage);
 	}
